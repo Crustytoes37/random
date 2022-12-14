@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Guess the Number</title>
+  </head>
+  <body>
+    <h1>Guess the Number</h1>
+    <p>I'm thinking of a number between 1 and 10. Can you guess it?</p>
+    <input type="text" id="guess" placeholder="Enter your guess here">
+    <button type="button" onclick="checkGuess()">Check My Guess</button>
+    <p id="result"></p>
+    
+    <script>
+      var secretNumber = Math.floor(Math.random() * 10) + 1; // generates a random number between 1 and 10
+      
+      function checkGuess() {
+        var guess = document.getElementById("guess").value;
+        if (guess == secretNumber) {
+          document.getElementById("result").innerHTML = "Congratulations! You guessed the number.";
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, that's not the right number. Try again.";
+        }
+      }
+    </script>
+  </body>
+</html>
